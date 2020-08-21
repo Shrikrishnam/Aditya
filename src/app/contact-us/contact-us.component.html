@@ -1,0 +1,94 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <label>Contact-us</label>
+<table class="appointmentTable">
+    <div class="form-group">
+    <tr>
+        <td class="td-left">
+            <label for="exampleInputfirstname">First Name</label>
+        </td>
+        <td>
+            <input type="text" class="form-control" formControlName="firstname" placeholder="First Name">
+        </td>
+        <td>
+            <small class="form-text text-muted"
+                *ngIf="contactForm.controls.firstname.touched && contactForm.controls.firstname.errors?.required">
+                Please enter first name.!
+            </small>
+        </td>
+    </tr>      
+    </div>
+    <div class="form-group">
+    <tr>
+        <td class="td-left">
+            <label for="exampleInputlastname">Last Name</label>
+            
+        </td>
+        <td class="td-left">
+            <input type="text" class="form-control" formControlName="lastname" placeholder="Last Name">
+        </td>
+        <td>
+            <small class="form-text text-muted"
+            *ngIf="contactForm.controls.lastname.touched && contactForm.controls.lastname.errors?.required">
+            Please enter last name.!
+        </small>
+        </td>
+    </tr>
+    </div>
+    <div class="form-group">
+    <tr>
+        <td class="td-left">
+            <label for="exampleInputphonenumber">Phone Number</label> 
+            
+        </td>
+        <td>
+            <input type="number" class="form-control" formControlName="phonenumber" placeholder="Phone Number">
+        </td>
+        <td>
+            <small class="form-text text-muted"
+                *ngIf="contactForm.controls.phonenumber.touched && contactForm.controls.phonenumber.errors?.required">
+                Please enter phone number.!
+            </small>
+        </td>
+    </tr>
+    </div>
+    <div class="form-group">
+    <tr>
+        <td class="td-left">
+            <label for="exampleInputemail">Email</label>
+        </td>
+        <td>
+            <input type="email" class="form-control" formControlName="email" placeholder="Email">
+        </td>
+        <td>
+            <small class="form-text text-muted"
+                *ngIf="contactForm.controls.email.touched && contactForm.controls.email.errors?.required">
+                Please enter email.!
+            </small>
+            <small class="form-text text-muted"
+                *ngIf="contactForm.controls.email.touched && contactForm.controls.email.errors?.pattern">
+                Enter the valid email .!
+            </small>
+        </td>
+    </tr>
+    </div>
+    <div class="form-group">
+    <tr>
+        <td class="td-left">
+            <label for="exampleInputmessage">Message</label>
+        </td>
+        <td>
+            <textarea type="text" class="form-control" formControlName="message" placeholder="Message"></textarea>
+        </td>
+        <td>
+            <small class="form-text text-muted"
+                *ngIf="contactForm.controls.message.touched && contactForm.controls.message.errors?.required">
+                Please enter message.!
+            </small>
+        </td>
+    </tr>
+    </div>
+    <tr>
+        <td colspan="3"><button type="submit" >Submit</button></td>
+    </tr>
+</table>
+</form>

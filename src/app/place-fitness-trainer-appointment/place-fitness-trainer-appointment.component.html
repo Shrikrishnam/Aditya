@@ -1,0 +1,280 @@
+<div>
+    <form [formGroup]="fitnessForm" (ngSubmit)="onSubmit()" novalidate>
+    <table class="appointmentTable">
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="firstname">First Name</label>
+                </td>
+                <td>
+                    <input type="text" #firstname class="form-control" formControlName="firstname" placeholder="First Name">
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.firstname.touched && fitnessForm.controls.firstname.errors?.required">
+                        First name is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                         *ngIf="fitnessForm.controls.firstname.touched && fitnessForm.controls.firstname.errors?.pattern">
+                        Only characters are allowed.
+                    </small>
+                </td>
+            </tr>
+        </div>
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="lastname">Last Name</label>
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="lastname" placeholder="Last Name">
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.lastname.touched && fitnessForm.controls.lastname.errors?.required">
+                        Last name is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.lastname.touched && fitnessForm.controls.lastname.errors?.pattern">
+                        Only characters are allowed.
+                    </small>
+                </td>
+            </tr>
+        </div>
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="age">Age</label>
+                </td>
+                <td>
+                    <input type="number" class="form-control" formControlName="age" placeholder="Age">
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.age.touched && fitnessForm.controls.age.errors?.required">
+                        Age is mandatory
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.age.touched && fitnessForm.controls.age.errors?.ageRangeValidator">
+                        Enter proper age.
+                    </small>
+                </td>
+            </tr>
+        </div>
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="phonenumber">Phone Number</label>
+                </td>
+                <td>
+                    <input type="number" class="form-control" formControlName="phonenumber" placeholder="Phone Number">
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.phonenumber.touched && fitnessForm.controls.phonenumber.errors?.required">
+                        Phonenumber is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.phonenumber.touched && fitnessForm.controls.phonenumber.errors?.pattern">
+                        Enter proper phonenumber.
+                    </small>
+                </td>
+            </tr>
+        </div>
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="email">Email</label>
+                </td>
+                <td>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.email.touched && fitnessForm.controls.email.errors?.required">
+                        Email is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.email.touched && fitnessForm.controls.email.errors?.pattern">
+                        Enter valid email id.
+                    </small>
+                </td>
+            </tr>
+        </div>   
+        <fieldset><legend>Address</legend>
+            <tr>
+                <td colspan="2">
+                    <input type="text" class="form-control" formControlName="streetaddress" placeholder="Street Name">
+                </td>
+                <td colspan="3">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.streetaddress.touched && fitnessForm.controls.streetaddress.errors?.required">
+                        Street name is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.city.touched && fitnessForm.controls.city.errors?.pattern">
+                        Only characters are allowed.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" >
+                    <input type="text" class="form-control" formControlName="city" placeholder="City">
+                </td>
+                <td colspan="3">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.city.touched && fitnessForm.controls.city.errors?.required">
+                        City is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.city.touched && fitnessForm.controls.city.errors?.pattern">
+                        Only characters are allowed.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" class="form-control" formControlName="state" placeholder="State">
+                </td>
+                <td colspan="3">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.state.touched && fitnessForm.controls.state.errors?.required">
+                        State is mandatory
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.state.touched && fitnessForm.controls.state.errors?.pattern">
+                        Only characters are allowed.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" class="form-control" formControlName="country" placeholder="Country">
+            
+                </td>
+                <td colspan="3">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.country.touched && fitnessForm.controls.country.errors?.required">
+                        Country is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.country.touched && fitnessForm.controls.country.errors?.pattern">
+                        Only characters are allowed.
+                    </small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="number" class="form-control" formControlName="pincode" placeholder="Pincode">
+             
+                </td>
+                <td colspan="3">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.pincode.touched && fitnessForm.controls.pincode.errors?.required">
+                        Pincode is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.pincode.touched && fitnessForm.controls.pincode.errors?.pattern">
+                        Only 6 digits are allowed.
+                    </small>
+                </td>
+            </tr>
+        </fieldset>
+        <div>
+            <tr>
+                <td class="td-left">
+                    <label for="trainerpreference">Trainer Preference</label>
+                </td>
+                <td>
+                    <input type="radio" id="maletrainer" formControlName="trainerpreference" value="Male Trainer" checked>
+                       
+                </td>
+                <td>
+                    <label for ="maletrainer">Male Trainer</label>
+                </td>
+                <td>
+                    <input type="radio" id="femaletrainer" formControlName="trainerpreference" value="Female Trainer">
+                </td>
+                <td>
+                    <label for ="femaletrainer">Female Trainer</label>
+                </td>
+            </tr>   
+        </div>
+        <div>
+            <tr>
+                <td class="td-left">
+                    <label>Physiotherapist</label>
+                </td>
+                <td>
+                    <input type="radio" id="physioY" formControlName="physiotherapist" value="Yes" checked>                       
+                </td>
+                <td>
+                    <label for="physioY">Yes</label>
+                </td>
+                <td>
+                    <input type="radio" id="physioN" formControlName="physiotherapist" value="No">
+                </td>
+                <td>
+                    <label for="physioN">No</label>
+                </td>
+            </tr>   
+        </div>
+        <tr>
+            <td colspan="5">
+                <p>Choose a Package</p>
+                <select formControlName="packages" (ngModelChange)="checkFunction()">
+                    <option [ngValue]="10000" selected>Gold</option>
+                    <option [ngValue]="15000">Platinum</option>
+                    <option [ngValue]="20000">Diamond</option>
+                </select>
+            </td>
+        </tr>
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="inr">INR</label>
+                </td>
+                <td>
+                    <input type="number" class="form-control" formControlName="inr" placeholder={{inrValue}}>
+        
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.inr.touched && fitnessForm.controls.inr.errors?.required">
+                        Inr is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.inr.touched && fitnessForm.controls.inr.errors?.inrValidator">
+                        Enter proper INR.
+                    </small>
+                </td>
+            </tr>
+        </div>
+        <div class="form-group">
+            <tr>
+                <td class="td-left">
+                    <label for="paisa">Paisa</label>
+                </td>
+                <td>
+                    <input type="number" class="form-control" formControlName="paisa" placeholder={{paisaValue}}>
+                </td>
+                <td colspan="2">
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.paisa.touched && fitnessForm.controls.paisa.errors?.required">
+                        Paisa is mandatory.
+                    </small>
+                    <small class="form-text text-muted"
+                        *ngIf="fitnessForm.controls.paisa.touched && fitnessForm.controls.paisa.errors?.paisaValidator">
+                        Enter proper paisa.
+                    </small>
+                </td>
+            </tr>
+        </div>
+        <tr>
+            <td colspan="5">
+                <button type="submit"> Submit </button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>

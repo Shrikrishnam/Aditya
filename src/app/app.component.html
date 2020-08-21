@@ -1,0 +1,43 @@
+<div class="logo">
+  <img src="C:/Users/yakshaangular07/Downloads/circularlogo" class="logoclass">
+  <p>Fitness Application</p>
+</div>
+<div class="navbar">
+  <span class="navbutton">
+    <button (click)="landingpage()">Home</button>
+  </span>
+  <span class="navbutton">
+    <button (click)="placeAppointment()">Place Appointment</button>
+  </span>
+  <span class="navbutton">
+    <button (click)="viewAppointment()">View Appointment</button>
+  </span>
+  <span class="navbutton">
+    <button>Search</button>
+  </span>
+  <span class="navbutton">
+    <button (click)="contactUspage()">Contact Us</button>
+  </span>
+</div>
+
+<div class="sidebar">
+  <div class="sidebutton">
+    <button (click)="landingpage()">Home</button>
+  </div>
+  <div class="sidebutton">
+    <button (click)="placeAppointment()">Place App</button>
+  </div>
+  <div class="sidebutton">
+    <button (click)="viewAppointment()">View App</button>
+  </div>
+  <div class="sidebutton">
+    <button>Search</button>
+  </div>
+  <div class="sidebutton">
+    <button (click)="contactUspage()">Contact Us</button>
+  </div>
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
